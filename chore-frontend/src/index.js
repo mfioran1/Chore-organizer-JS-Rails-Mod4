@@ -1,6 +1,10 @@
-console.log('testing')
+let HOUSE_HOLD_URL = 'http://localhost:3000/house_holds'
 
-const BACKEND_URL = 'http://localhost:3000';
-fetch(`${BACKEND_URL}/test`)
-.then(res => res.json())
-.then(parse => console.log(parse))
+document.addEventListener('DOMContentLoaded', () => {
+    function fetchHouseHolds() {
+        return fetch(`${HOUSE_HOLD_URL}`)
+        .then(resp => resp.json())
+        .then(houseHolds => console.log(houseHolds))
+    }
+    return fetchHouseHolds()
+})
