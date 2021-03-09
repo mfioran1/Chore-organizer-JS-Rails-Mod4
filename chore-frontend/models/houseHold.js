@@ -11,7 +11,12 @@ class HouseHold {
 
     }
 
-    
+    renderChores() {
+        let familySortedChores = this.chores
+        familySortedChores.forEach(choreObj => {
+            choreObj.render()
+        })
+    }
 
 
     static renderDropDownOptions(){
@@ -26,6 +31,7 @@ class HouseHold {
     }
 
     static renderHouseHolds() {
+        const select = document.querySelector("#select")
         HouseHold.all.forEach(houseHold => {
             let option = document.createElement("option")
             option.value = houseHold.id
