@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 })
-
+// button and values for 'Select your Family'
 selectHouseHoldBtn.addEventListener('click', () => {
     let selectHouse = false
     selectHouse = !selectHouse

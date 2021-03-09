@@ -10,7 +10,7 @@ class HouseHold {
         HouseHold.all.push(this)
 
     }
-
+    //for looking at chores with selected family
     renderChores() {
         let familySortedChores = this.chores
         familySortedChores.forEach(choreObj => {
@@ -18,7 +18,7 @@ class HouseHold {
         })
     }
 
-
+    // drop down options for Select your family section
     static renderDropDownOptions(){
          let selectHouseHold = document.getElementById('family-select')
         HouseHold.all.forEach(houseHold => {
@@ -29,7 +29,7 @@ class HouseHold {
             selectHouseHold.appendChild(option)
         })
     }
-
+    // drop down options for adding a chore to your family section
     static renderHouseHolds() {
         const select = document.querySelector("#select")
         HouseHold.all.forEach(houseHold => {
