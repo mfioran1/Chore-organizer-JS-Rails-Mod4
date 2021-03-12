@@ -8,7 +8,7 @@ class Chore {
         Chore.all.push(this)
     }
 
-
+    //render for chores display
     static renderChores(chores){
         chores.forEach(choreObj => {
             let newObj = new Chore(choreObj.name, choreObj.status, choreObj.id)
@@ -61,6 +61,7 @@ class Chore {
 
     }
 
+    //button functions for complete, delete and reset
     deleteChoreHandler() {
         event.preventDefault()
         fetch(`http://localhost:3000/chores/${this.id}`,{
@@ -127,7 +128,8 @@ class Chore {
         })
         
     }
-
+    
+    // post fetch chore
     static postChore(choreData){
         let formData = {
             "name": choreData.name.value,

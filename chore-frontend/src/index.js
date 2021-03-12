@@ -11,7 +11,7 @@ const addHouseHoldBtn = document.getElementById('add-new-family')
 
 
 
-
+// load house-hold drop downs and set text of buttons
 document.addEventListener('DOMContentLoaded', () => {
     function fetchHouseHolds() {
         return fetch(`${HOUSE_HOLD_URL}`)
