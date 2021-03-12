@@ -37,33 +37,33 @@ document.addEventListener('DOMContentLoaded', () => {
     
 })
 // button and values for 'Select your Family'
+let selectHouse = false
 selectHouseHoldBtn.addEventListener('click', () => {
-    let selectHouse = false
     selectHouse = !selectHouse
-
     if(selectHouse) {
-        selectHouseHoldBtn.textContent = 'Close'
+        selectHouseHoldBtn.textContent= 'Close'
         selectForm.style.display = 'block'
         selectForm.addEventListener('submit', e => {
             e.preventDefault()
-            let familyId = e.target.querySelector('#famiy-select').value
-
+            let familyId = e.target.querySelector('#family-select').value
+            
             let chosenFamily = HouseHold.all.find(chosenFamily => familyId == chosenFamily.id)
             clearChoreDivs()
+            
             chosenFamily.renderChores()
         })
-    }
-    else {
+    } else {
         selectHouseHoldBtn.textContent = "Select Your Family"
         selectForm.style.display = 'none'
     }
 })
 
-//button and values for new chore form
-addBtn.addEventListener('click', () => {
-    let addChore = false
-    addChore = !addChore
 
+//button and values for new chore form
+let addChore = false
+addBtn.addEventListener('click', () => {
+
+    addChore = !addChore
     if (addChore) {
         addBtn.textContent = 'Close'
         choreForm.style.display = 'block'
@@ -71,16 +71,18 @@ addBtn.addEventListener('click', () => {
             e.preventDefault()
             Chore.postChore(e.target)
         })
+        
+        
     } else {
-        addBtn.textContent = 'Add a New Chore!'
+        addBtn.textContent = "Add a New Chore!"
         choreForm.style.display = 'none'
     }
 })
 
 // Add House Hold button and Values
-
+let addHouseHold = false
 addHouseHoldBtn.addEventListener('click', () => {
-    let addHouseHold = false
+    
     addHouseHold = !addHouseHold
     if (addHouseHold){
         addHouseHoldBtn.textContent = "Close"
