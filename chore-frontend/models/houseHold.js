@@ -45,5 +45,36 @@ class HouseHold {
         })
     }
 
+    // POST fetch request for households
+    static postHouseHold(houseHoldObj){
+
+        let formData = {
+            "name": houseHoldObj.name.value,
+            "members": houseHoldObj.members.value
+        }
+
+        let configObj = {
+            method: "POST",
+            headers:{
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }
+
+        return fetch('http://localhost:3000/house_holds', configObj)
+            .then(resp => resp.json())
+            .then(houseHoldObj => {
+                let newHouseHoldObj = new HouseHold(houseHoldObj.name, houseHoldObj.members, houseHoldObj.id)
+                return newHouseHoldObj
+            })
+            .then(clearNewHouseForm)
+            .then(clearFamilyDD)
+            .then(clearNewChore)
+            .then(HouseHold.renderDropDownOptions)
+            .then(HouseHold.renderHouseHolds)
+
+    }
+
 
 }
