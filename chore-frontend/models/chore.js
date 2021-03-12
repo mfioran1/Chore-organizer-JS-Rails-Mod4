@@ -17,7 +17,6 @@ class Chore {
     }
 
     render() {
-        const choreCollection = document.querySelector('#chore-collection')
 
         let h2 = document.createElement('h2')
         h2.innerHTML = `<strong>${this.name}</strong>`
@@ -58,7 +57,7 @@ class Chore {
                 let houseHold = HouseHold.all.find(chosenFamily => choreObj.house_hold_id == chosenFamily.id)
                 let newObj = new Chore(choreObj.name, choreObj.status, choreObj.id)
                 houseHold.chores.push(newObj)
-                // clearChoreDivs()
+                clearChoreDivs()
                 houseHold.renderChores()
                 clearForm()
             })

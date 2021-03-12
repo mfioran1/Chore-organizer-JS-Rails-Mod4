@@ -2,8 +2,12 @@ let HOUSE_HOLD_URL = 'http://localhost:3000/house_holds'
 const selectHouseHoldBtn = document.getElementById('all-house-options')
 const selectForm = document.querySelector('.family-selector')
 const choreForm = document.querySelector('.add-chore-form')
+const choreCollection = document.querySelector('#chore-collection')
 const addBtn = document.getElementById('new-chore-btn')
 const housePopUp = document.getElementById('house-pop-up')
+const addHouseHoldBtn = document.getElementById('add-new-family')
+
+
 
 
 
@@ -28,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchHouseHolds()
     selectHouseHoldBtn.textContent = 'Select Your House Hold'
     addBtn.textContent = 'Add a New Chore'
+    addHouseHoldBtn.textContent = 'Add a New House Hold'
 
     
 })
@@ -74,10 +79,23 @@ addBtn.addEventListener('click', () => {
 
 // Add House Hold button and Values
 
-housePopUp.addEventListener('submit', e => {
-    e.preventDefault()
-    HouseHold.postHouseHold(e.target)
+addHouseHoldBtn.addEventListener('click', () => {
+    let addHouseHold = false
+    addHouseHold = !addHouseHold
+    if (addHouseHold){
+        addHouseHoldBtn.textContent = "Close"
+        housePopUp.style.display = 'block'
+        housePopUp.addEventListener('submit', e => {
+            e.preventDefault()
+            HouseHold.postHouseHold(e.target)
+        })
+    } else {
+        addHouseHoldBtn.textContent = "Add a New House Hold"
+        housePopUp.style.display = 'none'
+    }
 })
+
+
 
 
 
@@ -95,9 +113,9 @@ function clearNewHouseForm() {
     document.querySelector('.house-members-input-text').value  = ""
 }
 
-// function clearChoreDivs(){
-//     choreCollection.innerHTML = ""
-// }
+function clearChoreDivs(){
+    choreCollection.innerHTML = ""
+}
 
 function clearNewChore() {
     document.querySelector("#select").innerHTML = ""  
