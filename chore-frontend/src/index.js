@@ -33,11 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     selectHouseHoldBtn.textContent = 'Select Your House Hold'
     addBtn.textContent = 'Add a New Chore'
     addHouseHoldBtn.textContent = 'Add a New House Hold'
+    
+    
 
     
 })
 // button and values for 'Select your Family'
-let selectHouse = false
+let selectHouse = true
 selectHouseHoldBtn.addEventListener('click', () => {
     selectHouse = !selectHouse
     if(selectHouse) {
@@ -60,7 +62,7 @@ selectHouseHoldBtn.addEventListener('click', () => {
 
 
 //button and values for new chore form
-let addChore = false
+let addChore = true
 addBtn.addEventListener('click', () => {
 
     addChore = !addChore
@@ -80,7 +82,7 @@ addBtn.addEventListener('click', () => {
 })
 
 // Add House Hold button and Values
-let addHouseHold = false
+let addHouseHold = true
 addHouseHoldBtn.addEventListener('click', () => {
     
     addHouseHold = !addHouseHold
