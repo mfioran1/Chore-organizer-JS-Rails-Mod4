@@ -1,6 +1,8 @@
 let HOUSE_HOLD_URL = 'http://localhost:3000/house_holds'
 const selectHouseHoldBtn = document.getElementById('all-house-options')
 const selectForm = document.querySelector('.family-selector')
+const choreForm = document.querySelector('.add-chore-form')
+const addBtn = document.getElementById('new-chore-btn')
 
 
 
@@ -47,12 +49,18 @@ selectHouseHoldBtn.addEventListener('click', () => {
     }
 })
 
+//button and values for new chore form
+choreForm.addEventListener('submit', e => {
+    e.preventDefault()
+    Chore.postChore(e.target)
+})
 
 
-function clearChoreDivs(){
-    choreCollection.innerHTML = ""
-}
+// function clearChoreDivs(){
+//     choreCollection.innerHTML = ""
+// }
 
 function clearForm() {
     document.querySelector(".input-text").value = ""
 }
+

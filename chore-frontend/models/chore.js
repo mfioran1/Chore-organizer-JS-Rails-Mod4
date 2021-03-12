@@ -58,7 +58,7 @@ class Chore {
                 let houseHold = HouseHold.all.find(chosenFamily => choreObj.house_hold_id == chosenFamily.id)
                 let newObj = new Chore(choreObj.name, choreObj.status, choreObj.id)
                 houseHold.chores.push(newObj)
-                clearChoreDivs()
+                // clearChoreDivs()
                 houseHold.renderChores()
                 clearForm()
             })
