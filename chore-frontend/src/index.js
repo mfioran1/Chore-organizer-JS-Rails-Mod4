@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(houseHolds => {
             houseHolds.forEach(houseHold => {
                 let hh = new HouseHold(houseHold.name, houseHold.members, houseHold.id)
+                houseHold.chores.forEach(chore => {
+                    hh.addChore(chore)
+                })
             })
         HouseHold.renderDropDownOptions()
         HouseHold.renderHouseHolds()
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchHouseHolds()
     selectHouseHoldBtn.textContent = 'Select Your House Hold'
+    addBtn.textContent = 'Add a New Chore'
 
     
 })
@@ -50,15 +54,28 @@ selectHouseHoldBtn.addEventListener('click', () => {
 })
 
 //button and values for new chore form
-choreForm.addEventListener('submit', e => {
-    e.preventDefault()
-    Chore.postChore(e.target)
+addBtn.addEventListener('click', () => {
+    let addChore = false
+    addChore = !addChore
+
+    if (addChore) {
+        addBtn.textContent = 'Close'
+        choreForm.style.display = 'block'
+        choreForm.addEventListener('submit', e => {
+            e.preventDefault()
+            Chore.postChore(e.target)
+        })
+    } else {
+        addBtn.textContent = 'Add a New Chore!'
+        choreForm.style.display = 'none'
+    }
 })
 
 
-// function clearChoreDivs(){
-//     choreCollection.innerHTML = ""
-// }
+
+function clearChoreDivs(){
+    choreCollection.innerHTML = ""
+}
 
 function clearForm() {
     document.querySelector(".input-text").value = ""

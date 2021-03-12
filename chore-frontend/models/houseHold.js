@@ -18,6 +18,11 @@ class HouseHold {
         })
     }
 
+    addChore(chore){
+        let c = new Chore(chore.name, chore.status, chore.id)
+        this.chores.push(c)
+    }
+
     // drop down options for Select your family section
     static renderDropDownOptions(){
          let selectHouseHold = document.getElementById('family-select')
