@@ -6,14 +6,14 @@
 
 <h2>Instructions on how to load and get ready to use</h2>
 
-<h2>Step 1:</h2>
+
 
 <p>Clone this repository for the frontend, <a href="https://github.com/mfioran1/Chore-Organizer-Backend">and click this link</a> to get to the repository for the backend.</p>
 
 <p>**note in regards to the separation of repositories: The reason the repositories are separated is that when I began creating my project and was following the instructions and created the backend with the rails app, I never specified for it not to create its own git. 
 Therefore when I went to save it to github it became a nested repository within the original and would not save properly to github. After spending time with my cohort we could not figure out how to get it correctly working we decided to just create a new repository for it. This was a good learning experience for me and I apologize for any confusion.</p>
 
-<h2>Step 2:</h2>
+
 
 <p>On the backend repository do the following steps:</p>
 <ul>

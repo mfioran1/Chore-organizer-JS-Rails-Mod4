@@ -48,11 +48,11 @@ selectHouseHoldBtn.addEventListener('click', () => {
         selectForm.addEventListener('submit', e => {
             e.preventDefault()
             let familyId = e.target.querySelector('#family-select').value
-            
+
             let chosenFamily = HouseHold.all.find(chosenFamily => familyId == chosenFamily.id)
             clearChoreDivs()
-            
             chosenFamily.renderChores()
+            chosenFamily.renderMembers()
         })
     } else {
         selectHouseHoldBtn.textContent = "Select Your Family"
@@ -64,17 +64,14 @@ selectHouseHoldBtn.addEventListener('click', () => {
 //button and values for new chore form
 let addChore = true
 addBtn.addEventListener('click', () => {
-
     addChore = !addChore
-    if (addChore) {
+    if(addChore) {
         addBtn.textContent = 'Close'
         choreForm.style.display = 'block'
         choreForm.addEventListener('submit', e => {
             e.preventDefault()
             Chore.postChore(e.target)
         })
-        
-        
     } else {
         addBtn.textContent = "Add a New Chore!"
         choreForm.style.display = 'none'

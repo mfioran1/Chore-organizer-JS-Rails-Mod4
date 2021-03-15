@@ -18,6 +18,11 @@ class HouseHold {
         })
     }
 
+    renderMembers() {
+        let members = document.getElementById('family-chore-list')
+        members.innerText = `Family Chores For: ${this.members}`
+    }
+
     addChore(chore){
         let c = new Chore(chore.name, chore.status, chore.id)
         this.chores.push(c)
