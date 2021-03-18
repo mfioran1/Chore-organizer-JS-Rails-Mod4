@@ -102,8 +102,13 @@ class Chore {
         deleteChoreHandler() {
             event.preventDefault()
             fetch(`http://localhost:3000/chores/${this.id}`,{
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
             })
+            .then(resp => resp.json())
             .then(() => { 
                 document.getElementById(`${this.id}`).remove()
                 Chore.all = Chore.all.filter(chore => chore.id !== this.id)
