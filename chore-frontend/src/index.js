@@ -11,6 +11,7 @@ const addHouseHoldBtn = document.getElementById('add-new-family')
 
 
 
+
 // load house-hold drop downs and set text of buttons
 document.addEventListener('DOMContentLoaded', () => {
     function fetchHouseHolds() {
@@ -35,11 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     addHouseHoldBtn.textContent = 'Add a New House Hold'
     
     
+    
 
     
 })
 // button and values for 'Select your Family'
-let selectHouse = true
+let selectHouse = false
 selectHouseHoldBtn.addEventListener('click', () => {
     selectHouse = !selectHouse
     if(selectHouse) {
@@ -62,7 +64,7 @@ selectHouseHoldBtn.addEventListener('click', () => {
 
 
 //button and values for new chore form
-let addChore = true
+let addChore = false
 addBtn.addEventListener('click', () => {
     addChore = !addChore
     if(addChore) {
@@ -79,7 +81,7 @@ addBtn.addEventListener('click', () => {
 })
 
 // Add House Hold button and Values
-let addHouseHold = true
+let addHouseHold = false
 addHouseHoldBtn.addEventListener('click', () => {
     
     addHouseHold = !addHouseHold
