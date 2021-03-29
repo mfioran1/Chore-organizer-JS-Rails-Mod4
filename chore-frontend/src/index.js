@@ -8,6 +8,11 @@ const housePopUp = document.getElementById('house-pop-up')
 const addHouseHoldBtn = document.getElementById('add-new-family')
 
 
+let selectHouse = false
+let addChore = false
+let addHouseHold = false
+
+
 
 
 
@@ -41,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
 })
 // button and values for 'Select your Family'
-let selectHouse = false
-selectHouseHoldBtn.addEventListener('click', () => {
+selectHouseHoldBtn.addEventListener('click', function() {
+    console.log(this)
     selectHouse = !selectHouse
     if(selectHouse) {
         selectHouseHoldBtn.textContent= 'Close'
@@ -64,7 +69,7 @@ selectHouseHoldBtn.addEventListener('click', () => {
 
 
 //button and values for new chore form
-let addChore = false
+
 addBtn.addEventListener('click', () => {
     addChore = !addChore
     if(addChore) {
@@ -81,7 +86,7 @@ addBtn.addEventListener('click', () => {
 })
 
 // Add House Hold button and Values
-let addHouseHold = false
+
 addHouseHoldBtn.addEventListener('click', () => {
     
     addHouseHold = !addHouseHold
@@ -97,6 +102,8 @@ addHouseHoldBtn.addEventListener('click', () => {
         housePopUp.style.display = 'none'
     }
 })
+
+
 
 
 

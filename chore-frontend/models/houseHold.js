@@ -12,11 +12,22 @@ class HouseHold {
     }
     //for looking at chores with selected family
     renderChores() {
+        const button = document.createElement('button')
+            button.setAttribute('class', 'incomplete-btn')
+            button.innerText = 'See what is incomplete!'
+            choreCollection.appendChild(button)
+            button.addEventListener('click', Chore.filterChores) 
         let familySortedChores = this.chores
         familySortedChores.forEach(choreObj => {
             choreObj.render()
+
+            // completeBtn.addEventListener('click', event => this.completeChoreHandler(event, this))
+            
         })
+        
     }
+
+    
 
     renderMembers() {
         let members = document.getElementById('family-chore-list')

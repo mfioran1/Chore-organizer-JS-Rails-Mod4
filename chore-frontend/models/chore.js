@@ -39,6 +39,18 @@ class Chore {
         
 
     }
+
+        static isIncomplete(chore){
+            return chore.status === "Incomplete"
+        }
+
+        static filterChores() {
+            const sorted = Chore.all.filter(Chore.isIncomplete)
+          
+            console.log(sorted)
+            clearChoreDivs()
+            sorted.map(chore => chore.render())
+        }
     
 
     
@@ -110,7 +122,7 @@ class Chore {
             })
             .then(resp => resp.json())
             .then(() => { 
-                document.getElementById(`${this.id}`).remove()
+                document.getElementById(`${this.id}`).remove();
                 Chore.all = Chore.all.filter(chore => chore.id !== this.id)
             })
         }
